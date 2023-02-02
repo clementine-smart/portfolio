@@ -3,7 +3,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 
 export default function Nav() {
-  const [menuToggle, setMenuToggle] = useState<boolean>(false)
+  const [menuToggle, setMenuToggle] = useState<boolean>(true)
 
   function handleClick() {
     setMenuToggle(() => !menuToggle)
@@ -11,7 +11,7 @@ export default function Nav() {
 
   return (
     <>
-      <nav className="text-3xl font-bold flex flex-col cursor-pointer select-none text-right w-1/6">
+      <nav className="text-3xl font-bold flex flex-col cursor-pointer select-none text-right justify-end w-1/6">
         <button onClick={handleClick} className="text-3xl font-bold text-right">
           -
         </button>
