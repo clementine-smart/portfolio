@@ -1,4 +1,6 @@
 import './globals.css'
+import Header from './Header'
+import Nav from './Nav'
 
 export default function RootLayout({
   children,
@@ -7,12 +9,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
       <head />
-      <body>{children}</body>
+      <body>
+        <div className="flex">
+          <header className="flex justify-between w-screen m-8">
+            <Header />
+            <Nav />
+          </header>
+          {children}
+        </div>
+      </body>
     </html>
   )
 }
