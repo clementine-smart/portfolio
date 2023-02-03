@@ -1,9 +1,11 @@
 'use client'
 import { useState } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 export default function Nav() {
   const [menuToggle, setMenuToggle] = useState<boolean>(true)
+  const pathname = usePathname()
 
   function handleClick() {
     setMenuToggle(() => !menuToggle)
@@ -18,16 +20,16 @@ export default function Nav() {
         {menuToggle && (
           <>
             <Link href="/" className="hover:italic">
-              home
+              {pathname === '/' ? '_ home' : 'home'}
             </Link>
             <Link href="/about" className="hover:italic">
-              about
+              {pathname === '/about' ? '_ about' : 'about'}
             </Link>
             <Link href="/projects" className="hover:italic">
-              projects
+              {pathname === '/projects' ? '_ projects' : 'projects'}
             </Link>
             <Link href="/contact" className="hover:italic">
-              contact
+              {pathname === '/contact' ? '_ contact' : 'contact'}
             </Link>
           </>
         )}
