@@ -1,6 +1,15 @@
-function Window() {
+export interface Props {
+  size: {
+    width: string
+    height: string
+  }
+}
+
+function Window({ size }: Props) {
   return (
-    <div className="w-2/3 h-4/5 bg-pink-300 rounded-xl border-t-[30px] self-center drop-shadow-xl z-0"></div>
+    <div
+      className={`w-${size.width} h-${size.height} bg-pink-300 rounded-xl border-t-[30px] self-center drop-shadow-xl z-0`}
+    ></div>
   )
 }
 

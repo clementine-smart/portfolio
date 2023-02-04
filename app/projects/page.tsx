@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   return (
     <main className="w-screen h-screen flex justify-center">
-      <Window />
+      <Window size={{ width: '2/3', height: '4/5' }} />
     </main>
   )
 }
