@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { AiOutlineFolder, AiOutlineFolderOpen } from 'react-icons/ai'
 
 export default function Nav() {
   const [menuToggle, setMenuToggle] = useState<boolean>(true)
@@ -14,8 +15,11 @@ export default function Nav() {
   return (
     <>
       <nav className="text-3xl font-bold flex flex-col cursor-pointer select-none text-right justify-end w-1/6">
-        <button onClick={handleClick} className="text-3xl font-bold text-right">
-          -
+        <button
+          onClick={handleClick}
+          className="text-3xl font-bold flex justify-end"
+        >
+          {menuToggle ? <AiOutlineFolderOpen /> : <AiOutlineFolder />}
         </button>
         {menuToggle && (
           <>
