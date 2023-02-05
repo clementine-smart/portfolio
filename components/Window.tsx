@@ -8,8 +8,12 @@ export interface Props {
 function Window({ size }: Props) {
   return (
     <div
-      className={`w-${size.width} h-${size.height} bg-pink-300 rounded-xl border-t-[30px] self-center drop-shadow-xl z-0`}
-    ></div>
+      className={`w-${size.width} h-${size.height} rounded bg-[#DDE1EB80] self-center border-2 border-black`}
+    >
+      <div
+        className={`w-full h-7 bg-[#E1ECF2] rounded-t border-b-2 border-black`}
+      ></div>
+    </div>
   )
 }
 
