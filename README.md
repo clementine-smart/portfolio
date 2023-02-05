@@ -1,4 +1,4 @@
-# Clementine Samrt - Portfolio
+# Clementine Smart - Portfolio
 
 A little place to compile and share my dev projects. 
 
