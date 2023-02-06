@@ -1,13 +1,13 @@
-import WindowNav from '@/components/WindowNav'
-import { Inter } from '@next/font/google'
 import Window from '../../components/Window'
-
-const inter = Inter({ subsets: ['latin'] })
+import WindowNav from '@/components/WindowNav'
 
 export default function Home() {
   return (
-    <main className="w-screen h-screen flex justify-center">
-      <Window size={{ width: '2/3', height: '4/5' }} />
+    <main className="w-full h-full flex flex-col justify-center items-end mt-10">
+      <div className="w-2/3 h-4/5 self-center">
+        <WindowNav />
+        <Window />
+      </div>
     </main>
   )
 }

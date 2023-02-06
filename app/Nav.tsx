@@ -14,7 +14,7 @@ export default function Nav() {
 
   return (
     <>
-      <nav className="text-3xl font-bold flex flex-col cursor-pointer select-none text-right justify-end w-1/6">
+      <nav className="text-2xl font-bold flex flex-col cursor-pointer select-none text-right justify-end fixed w-42 pt-8 pr-8 right-0">
         <button
           onClick={handleClick}
           className="text-3xl font-bold flex justify-end"
@@ -22,20 +22,28 @@ export default function Nav() {
           {menuToggle ? <AiOutlineFolderOpen /> : <AiOutlineFolder />}
         </button>
         {menuToggle && (
-          <>
-            <Link href="/" className="hover:italic">
-              {pathname === '/' ? '_ home' : 'home'}
-            </Link>
-            <Link href="/about" className="hover:italic">
-              {pathname === '/about' ? '_ about' : 'about'}
-            </Link>
-            <Link href="/projects" className="hover:italic">
-              {pathname === '/projects' ? '_ projects' : 'projects'}
-            </Link>
-            <Link href="/contact" className="hover:italic">
-              {pathname === '/contact' ? '_ contact' : 'contact'}
-            </Link>
-          </>
+          <ul>
+            <li>
+              <Link href="/" className="hover:italic">
+                {pathname === '/' ? '_ home' : 'home'}
+              </Link>
+            </li>
+            <li>
+              <Link href="/about" className="hover:italic">
+                {pathname === '/about' ? '_ about' : 'about'}
+              </Link>
+            </li>
+            <li>
+              <Link href="/projects" className="hover:italic">
+                {pathname === '/projects' ? '_ projects' : 'projects'}
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact" className="hover:italic">
+                {pathname === '/contact' ? '_ contact' : 'contact'}
+              </Link>
+            </li>
+          </ul>
         )}
       </nav>
     </>

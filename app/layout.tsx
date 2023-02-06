@@ -12,11 +12,11 @@ export default function RootLayout({
     <html lang="en">
       <head />
       <body>
-        <header className="flex justify-between items-start w-full p-8 absolute">
-          <Header />
+        <div className="flex flex-col justify-between h-screen p-4 z-0">
+          <header className="flex justify-between items-start p-8 z-1 fixed">
+            <Header />
+          </header>
           <Nav />
-        </header>
-        <div className="flex flex-col justify-between h-screen p-4">
           {children}
           <Footer />
         </div>

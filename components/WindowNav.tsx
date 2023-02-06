@@ -3,7 +3,7 @@
 import { ButtonHTMLAttributes, useState } from 'react'
 
 function WindowNav() {
-  const [project, setProject] = useState<'bush' | 'book'>('bush')
+  const [project, setProject] = useState<'bush' | 'book'>('book')
 
   function handleClick(e: React.MouseEvent<HTMLButtonElement>) {
     const projectName = e.currentTarget.id
@@ -13,17 +13,21 @@ function WindowNav() {
   }
 
   return (
-    <nav className="w-full flex justify-center items-center gap-2">
+    <nav className="w-full flex justify-start gap-2 ml-2">
       <button
         id="book"
-        className="p-2 border-2 border-black rounded-t"
+        className={`px-6 h-7 border-t-2 border-x-2 border-black rounded-t ${
+          project == 'book' ? 'bg-[#E1ECF2]' : 'bg-[#DDE1EB80]'
+        }`}
         onClick={handleClick}
       >
         book the book
       </button>
       <button
         id="bush"
-        className="p-2 border-2 border-black rounded-t"
+        className={`px-6 h-7 border-t-2 border-x-2 border-black rounded-t ${
+          project == 'bush' ? 'bg-[#E1ECF2]' : 'bg-[#DDE1EB80]'
+        }`}
         onClick={handleClick}
       >
         the mighty bush
