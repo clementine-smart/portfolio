@@ -1,10 +1,21 @@
 'use client'
 import { useState } from 'react'
+import { usePathname } from 'next/navigation'
 
-import ProjectNavButton from '@/app/projects/ProjectNavButton'
+import ProjectNavButton from '@/components/ProjectNavButton'
+export type Project = 'the-mighty-bush' | 'book-the-book' | undefined
 
 function WindowNav() {
-  const [project, setProject] = useState<'bush' | 'book'>('bush')
+  const pathname = usePathname()?.split('/')[2]
+  const projectName: Project = narrowParams()
+
+  function narrowParams() {
+    if (pathname == 'the-mighty-bush' || pathname == 'book-the-book') {
+      return pathname
+    }
+  }
+
+  const [project, setProject] = useState<Project>(projectName)
 
   return (
     <nav className="w-full flex justify-start gap-2 ml-2">
@@ -12,6 +23,7 @@ function WindowNav() {
         projectDetails={{
           name: 'the mighty bush',
           id: 'bush',
+          link: 'the-mighty-bush',
           project,
           setProject,
         }}
@@ -20,6 +32,7 @@ function WindowNav() {
         projectDetails={{
           name: 'book the book',
           id: 'book',
+          link: 'book-the-book',
           project,
           setProject,
         }}

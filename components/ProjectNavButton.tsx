@@ -1,32 +1,35 @@
 import { Dispatch, SetStateAction } from 'react'
+import Link from 'next/link'
+import type { Project } from './WindowNav'
 
 export interface Props {
   projectDetails: {
     name: string
     id: string
-    project: 'book' | 'bush'
-    setProject: Dispatch<SetStateAction<'bush' | 'book'>>
+    link: string
+    project: Project
+    setProject: Dispatch<SetStateAction<Project>>
   }
 }
 
 function ProjectNavButton({ projectDetails }: Props) {
-  const { name, id, project, setProject } = projectDetails
+  const { name, id, link, project, setProject } = projectDetails
 
   function handleClick(e: React.MouseEvent<HTMLButtonElement>) {
     const projectName = e.currentTarget.id
-    if (projectName == 'bush' || projectName == 'book') {
+    if (projectName == 'the-mighty-bush' || projectName == 'book-the-book') {
       setProject(() => projectName)
     }
   }
   return (
     <button
-      id={id}
+      id={link}
       className={`px-6 h-7 border-t-2 border-x-2 border-black rounded-t ${
-        project == id ? 'bg-[#E1ECF2]' : 'bg-[#DDE1EB80]'
+        project == link ? 'bg-[#E1ECF2]' : 'bg-[#DDE1EB80]'
       }`}
       onClick={handleClick}
     >
-      {name}
+      <Link href={`/projects/${link}`}>{name}</Link>
     </button>
   )
 }

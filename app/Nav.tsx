@@ -34,8 +34,10 @@ export default function Nav() {
               </Link>
             </li>
             <li>
-              <Link href="/projects" className="hover:italic">
-                {pathname === '/projects' ? '_ projects' : 'projects'}
+              <Link href="/projects/the-mighty-bush" className="hover:italic">
+                {pathname?.split('/')[1] === 'projects'
+                  ? '_ projects'
+                  : 'projects'}
               </Link>
             </li>
             <li>
