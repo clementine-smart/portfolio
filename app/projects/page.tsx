@@ -1,3 +1,4 @@
+import WindowNav from '@/components/WindowNav'
 import { Inter } from '@next/font/google'
 import Window from '../../components/Window'
 
