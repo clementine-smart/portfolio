@@ -22,15 +22,17 @@ function ProjectNavButton({ projectDetails }: Props) {
     }
   }
   return (
-    <button
-      id={link}
-      className={`px-6 h-7 border-t-2 border-x-2 border-black rounded-t ${
-        project == link ? 'bg-[#E1ECF2]' : 'bg-[#DDE1EB80]'
-      }`}
-      onClick={handleClick}
-    >
-      <Link href={`/projects/${link}`}>{name}</Link>
-    </button>
+    <Link href={`/projects/${link}`}>
+      <button
+        id={link}
+        className={`px-6 h-7 border-t-2 border-x-2 border-black rounded-t ${
+          project == link ? 'bg-[#E1ECF2]' : 'bg-[#DDE1EB80]'
+        }`}
+        onClick={handleClick}
+      >
+        {name}
+      </button>
+    </Link>
   )
 }
 
