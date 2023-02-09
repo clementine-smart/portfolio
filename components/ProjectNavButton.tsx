@@ -25,7 +25,7 @@ function ProjectNavButton({ projectDetails }: Props) {
     <Link href={`/projects/${link}`}>
       <button
         id={link}
-        className={`px-6 h-7 border-t-2 border-x-2 border-black rounded-t ${
+        className={`px-6 h-7 border-x-2 border-t-2 border-black rounded-t ${
           project == link ? 'bg-[#E1ECF2]' : 'bg-[#DDE1EB80]'
         }`}
         onClick={handleClick}

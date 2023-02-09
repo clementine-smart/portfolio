@@ -12,8 +12,8 @@ export default function RootLayout({
     <html lang="en">
       <head />
       <body>
-        <div className="flex flex-col justify-between h-screen p-4 z-0">
-          <header className="flex justify-between items-start p-8 z-1 fixed">
+        <div className="flex flex-col justify-between h-screen p-4">
+          <header className="flex justify-between items-start p-8 fixed">
             <Header />
           </header>
           <Nav />
