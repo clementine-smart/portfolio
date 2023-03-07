@@ -3,7 +3,7 @@ import Image from 'next/image'
 function MightyBush() {
   return (
     <>
-      <div className="relative">
+      <div className="flex flex-row h-full items-center">
         <Image
           src={'/projects/mighty-bush/mighty-bush-home.png'}
           alt="The mighty bush app home page"

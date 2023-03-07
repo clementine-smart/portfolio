@@ -18,26 +18,31 @@ function WindowNav() {
   const [project, setProject] = useState<Project>(projectName)
 
   return (
-    <nav className="w-full flex justify-start gap-2 ml-2">
-      <ProjectNavButton
-        projectDetails={{
-          name: 'the mighty bush',
-          id: 'bush',
-          link: 'the-mighty-bush',
-          project,
-          setProject,
-        }}
-      />
-      <ProjectNavButton
-        projectDetails={{
-          name: 'book the book',
-          id: 'book',
-          link: 'book-the-book',
-          project,
-          setProject,
-        }}
-      />
-    </nav>
+    <>
+      <nav className="w-full flex justify-start gap-2 ml-2">
+        <ProjectNavButton
+          projectDetails={{
+            name: 'the mighty bush',
+            id: 'bush',
+            link: 'the-mighty-bush',
+            project,
+            setProject,
+          }}
+        />
+        <ProjectNavButton
+          projectDetails={{
+            name: 'book the book',
+            id: 'book',
+            link: 'book-the-book',
+            project,
+            setProject,
+          }}
+        />
+      </nav>
+      <div
+        className={`w-full h-7 bg-[#E1ECF2] rounded-t border-x-2 border-t-2 border-black`}
+      ></div>
+    </>
   )
 }
 
