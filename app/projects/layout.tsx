@@ -10,7 +10,7 @@ export default function RootLayout({
       <div className="w-2/3 h-4/5 self-center">
         <WindowNav />
         <div
-          className={`w-full h-full rounded-b bg-[#DDE1EB80] border-2 border-black`}
+          className={`w-full h-full rounded-b bg-[#ccd5e0] border-2 border-black`}
         >
           {children}
         </div>
